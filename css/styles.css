@@ -97,15 +97,18 @@ body {
   justify-content: center;
 }
 .hands img {
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   display: block;
 }
 .hands .papier {
   margin-right: 20px;
 }
 .hands .schere {
-  margin-left: 20px;
+  margin-right: 20px;
+}
+.hands .schere {
+  margin-top: 200px;
 }
 .hands .hand {
   cursor: pointer;
@@ -124,8 +127,8 @@ body {
   width: 900px;
 }
 .contest img {
-  width: 275px;
-  height: 275px;
+  width: 175px;
+  height: 175px;
 }
 .contest > div {
   flex: 1;
@@ -196,4 +199,16 @@ body {
 }
 .attribution a {
   color: rgb(230, 175, 24);
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .playboard {
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  .contest {
+    flex-direction: column;
+  }
 }
