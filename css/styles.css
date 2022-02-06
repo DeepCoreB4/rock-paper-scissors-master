@@ -1,5 +1,8 @@
+/*  -------------------------------------------------------
+    2022 Challenge by Frontend Mentor.  CSS by Edagr Cuppari
+    -------------------------------------------------------------
 /*---------------------------------------------------------------
- Global styles
+  Global styles
 ----------------------------------------------------------------*/
 
 * {
@@ -14,7 +17,7 @@ body {
 
 /* 
 -------------------------------------------------------------------------------
-HTML elements 
+  HTML elements 
 -------------------------------------------------------------------------------
 */
 .playboard {
@@ -45,12 +48,14 @@ HTML elements
   padding-left: 30px;
 }
 
+/*---------------------------------------------------------------
+  Score table
+----------------------------------------------------------------*/
 .score {
   width: 150px;
   height: 114px;
   background-color: rgba(255, 255, 255, 0);
   border: 1px solid white;
-  color: antiquewhite;
   border-radius: 8px;
   margin-right: 0px;
   display: flex;
@@ -58,13 +63,11 @@ HTML elements
   justify-content: center;
   align-items: center;
 }
-
 .score h1 {
-  color: antiquewhite;
+  color: rgb(253, 152, 152);
   font-size: 56px;
   font-family: "Waffle-Soft", sans-serif;
 }
-
 .score p {
   color: #48c22a;
   font-size: 16px;
@@ -75,6 +78,9 @@ HTML elements
   text-align: left;
 }
 
+/*---------------------------------------------------------------
+  Hands Table
+----------------------------------------------------------------*/
 .hands {
   background-image: url("../assets/triangle.png");
   background-position: center;
@@ -95,39 +101,35 @@ HTML elements
   height: 200px;
   display: block;
 }
-
 .hands .papier {
   margin-right: 20px;
 }
-
 .hands .schere {
   margin-left: 20px;
 }
-
 .hands .hand {
   cursor: pointer;
   transition: all 0.25s;
 }
-
 .hands .hand:hover {
   transform: translate3d(0px, -8px, 0px);
 }
 
+/*---------------------------------------------------------------
+  Play Button / Contest / NewGame
+----------------------------------------------------------------*/
 .contest {
   display: none;
   margin-top: 50px;
   width: 900px;
 }
-
 .contest img {
   width: 275px;
   height: 275px;
 }
-
 .contest > div {
   flex: 1;
 }
-
 .contest h1 {
   color: white;
   font-size: 20px;
@@ -135,7 +137,6 @@ HTML elements
   margin-bottom: 50px;
   text-align: center;
 }
-
 .contest .newGame {
   color: hsl(229, 25%, 31%);
   background-color: white;
@@ -145,35 +146,37 @@ HTML elements
   transition: all 0.15s;
   font-family: "Waffle-Slap";
 }
-
 .newGame:hover {
   background: rgb(218, 218, 218);
   transform: translate3d(0px, -2px, 0px);
   font-family: "Waffle-Slap", "Waffle-Soft", Calibri, "Trebuchet MS", sans-serif;
 }
-
 .contest .handImageContainer {
   display: flex;
   justify-content: center;
 }
 
+/*---------------------------------------------------------------
+ Result Tabe / Ho has won?
+----------------------------------------------------------------*/
 .resultat {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 .resultat h1 {
   font-size: 45px;
   color: white;
 }
-
 .computerhand {
   display: flex;
   flex-direction: column;
 }
 
+/*---------------------------------------------------------------
+ Footer styles
+----------------------------------------------------------------*/
 .attribution div {
   text-align: center;
   width: 100vw;
@@ -184,7 +187,6 @@ HTML elements
   font-size: 22px;
   color: white;
 }
-
 .abstand {
   display: flex;
   flex-direction: column;
@@ -192,7 +194,6 @@ HTML elements
   width: 100vw;
   height: 50vh;
 }
-
 .attribution a {
   color: rgb(230, 175, 24);
 }
