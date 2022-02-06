@@ -1,37 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta ="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <title>Schere / Stein & Papier</title>
+  </head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <body>
+    <div class="playboard">
+      <div class="scoreboard">
+        <div class="title">
+          <img src="/assets/title.png" />
+        </div>
+        <div class="score">
+          <p>SCORE</p>
+          <h1>0</h1>
+        </div>
+      </div>
+      <div class="hands">
+        <div class="hand papier">
+          <img src="/assets/papier.png" onclick="pickUserHand('papier')" />
+        </div>
+        <div class="hand schere">
+          <img src="/assets/schere.png" onclick="pickUserHand('schere')" />
+        </div>
+        <div class="hand stein">
+          <img src="/assets/stein.png" onclick="pickUserHand('stein')" />
+        </div>
+      </div>
+      <div class="contest">
+        <div class="userhand">
+          <h1>YOU PICKED</h1>
+          <div class="handImageContainer">
+            <img id="userPickImage" src="/assets/papier.png" />
+          </div>
+        </div>
+        <div class="resultat">
+          <div class="decision">
+            <h1>YOU WIN!</h1>
+          </div>
+          <div class="newGame" onclick="restartGame()">PLAY AGAIN</div>
+        </div>
+        <div class="computerhand">
+          <h1>SHELDON PICKED</h1>
+          <div class="handImageContainer">
+            <img id="computerPickImage" src="/assets/papier.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution" div>
+      <div class="footer">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/DeepCoreB4#">Edgar Cuppari</a>.
+      </div>
+    </div>
+    <script src="/js/schnipschnap.js"></script>
+  </body>
 </html>
