@@ -4,13 +4,13 @@ const handOptions = {
   "schere": "/assets/schere.png"
 }
 
-let SCORE = 0;
+var SCORE = 0;
 
 const pickUserHand = (hand) => {
-  let hands = document.querySelector(".hands");
+  var hands = document.querySelector(".hands");
   hands.style.display = "none";
 
-  let contest = document.querySelector(".contest");
+  var contest = document.querySelector(".contest");
   contest.style.display = "flex";
 
   // set user Image
@@ -20,8 +20,8 @@ const pickUserHand = (hand) => {
 };
 
 const pickComputerHand = (hand) => {
-  let hands = ["stein", "stein", "schere"];
-  let cpHand = hands[Math.floor(Math.random() * hands.length)];
+  var hands = ["stein", "stein", "schere"];
+  var cpHand = hands[Math.floor(Math.random() * hands.length)];
 
   // set computer image 
   document.getElementById("computerPickImage").src = handOptions[cpHand]
@@ -36,14 +36,14 @@ const referee = (userHand, cpHand) => {
   }
   if (userHand == "papier" && cpHand == "stein") {
     setDecision("YOU WIN!");
-    setScore(SCORE + 2);
+    setScore(SCORE + 1);
   }
   if (userHand == "papier" && cpHand == "papier") {
     setDecision("It's a tie!");
   }
   if (userHand == "stein" && cpHand == "schere") {
     setDecision("YOU WIN!");
-    setScore(SCORE + 2);
+    setScore(SCORE + 1);
   }
   if (userHand == "stein" && cpHand == "papier") {
     setDecision("YOU LOSE!");
@@ -61,15 +61,15 @@ const referee = (userHand, cpHand) => {
   }
   if (userHand == "schere" && cpHand == "stein") {
     setDecision("YOU WIN!");
-    setScore(SCORE + 2);
+    setScore(SCORE + 1);
   }
 }
 
 const restartGame = () => {
-  let contest = document.querySelector(".contest");
+  var contest = document.querySelector(".contest");
   contest.style.display = "none";
 
-  let hands = document.querySelector(".hands");
+  var hands = document.querySelector(".hands");
   hands.style.display = "flex";
 }
 
@@ -80,4 +80,12 @@ const setDecision = (decision) => {
 const setScore = (newScore) => {
   SCORE = newScore;
   document.querySelector(".score h1").innerText = newScore;
+}
+
+var score = 0;
+
+function Score() {
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#0095DD";
+  ctx.fillText("Score: " + score, 8, 20);
 }
