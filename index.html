@@ -74,7 +74,40 @@
       <br />
       <div class="abstand"></div>
       <div class="rules">
-        <h1>Rules</h1>
+        <button
+          onclick="document.getElementById('id01').style.display='block'"
+          class="ws-btn w3-dark-grey"
+          data-toggle="modal"
+          style="font-size: 17px; padding: 12px 35px"
+        >
+          Open Rules
+        </button>
+        <div id="id01" class="w3-modal" style="display: block">
+          <div class="w3-modal-content w3-animate-top w3-card-4">
+            <header class="w3-container w3-red w3-display-container">
+              <span
+                onclick="document.getElementById('id01').style.display='none'"
+                class="w3-button w3-xlarge w3-display-topright w3-hover-red w3-hover-opacity"
+                >X</span
+              >
+              <center><h2>That's the Rules</h2></center>
+              <br />
+            </header>
+            <div class="w3-container">
+              <br />
+              <center>
+                <img src="/assets/title.png" />
+                <p>Schäri , Stei, Papier.....> let's Play</p>
+                <p>
+                  You play with Sheldon Cooper🎉, aight i warned you LOL 🤪🤦🏾‍♂️
+                </p>
+              </center>
+            </div>
+            <div class="w3-container">
+              <center><img src="/assets/rules.png" /></center>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="attribution" div>
         <div class="footer">
@@ -88,7 +121,9 @@
       </div>
     </div>
     <script src="/js/schnipschnap.js"></script>
+    <script src="/js/modal.js"></script>
     <script>
+      // Get the click audio
       function play() {
         var audio = document.getElementById("audio");
         audio.play();
