@@ -59,7 +59,7 @@ const referee = (userHand, cpHand) => {
     setDecision("YOU LOSE!");
     setScore(SCORE - 1);
   }
-  if (userHand == "schere" && cpHand == "stein") {
+  if (userHand == "stein" && cpHand == "schere") {
     setDecision("YOU WIN!");
     setScore(SCORE + 1);
   }
@@ -82,10 +82,6 @@ const setScore = (newScore) => {
   document.querySelector(".score h1").innerText = newScore;
 }
 
-var score = 0;
-
-function Score() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Score: " + score, 8, 20);
+function playAudio(src) {
+  new Audio(src).play();
 }

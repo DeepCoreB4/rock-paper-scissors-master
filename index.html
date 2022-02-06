@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
       rel="stylesheet"
     />
+
     <title>Schere / Stein & Papier</title>
   </head>
 
@@ -26,13 +27,22 @@
       </div>
       <div class="hands">
         <div class="hand papier">
-          <img src="/assets/papier.png" onclick="pickUserHand('papier')" />
+          <img
+            src="/assets/papier.png"
+            onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')"
+          />
         </div>
         <div class="hand schere">
-          <img src="/assets/schere.png" onclick="pickUserHand('schere')" />
+          <img
+            src="/assets/schere.png"
+            onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')"
+          />
         </div>
         <div class="hand stein">
-          <img src="/assets/stein.png" onclick="pickUserHand('stein')" />
+          <img
+            src="/assets/stein.png"
+            onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')"
+          />
         </div>
       </div>
       <div class="contest">
@@ -68,7 +78,12 @@
         </div>
       </div>
     </div>
-
     <script src="/js/schnipschnap.js"></script>
+    <script>
+      function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
+    </script>
   </body>
 </html>
