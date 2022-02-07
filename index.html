@@ -22,31 +22,31 @@
 
   <body>
     <div class="playboard">
-      <div class="scoreboard">
+      <div class="scoreboard" role="board">
         <div class="title">
-          <img src="/assets/title.png" />
+          <img src="/assets/title.png" alt="Titel"/>
         </div>
         <div class="score">
           <p>SCORE</p>
           <h1>0</h1>
         </div>
       </div>
-      <div class="hands">
+      <div class="hands" role="hands">
         <div class="hand papier">
           <img
-            src="/assets/papier.png"
+            src="/assets/papier.png" alt="Papier"
             onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')"
           />
         </div>
         <div class="hand schere">
           <img
-            src="/assets/schere.png"
+            src="/assets/schere.png" alt="Schere"
             onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')"
           />
         </div>
         <div class="hand stein">
           <img
-            src="/assets/stein.png"
+            src="/assets/stein.png" alt="Stein"
             onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')"
           />
         </div>
@@ -55,7 +55,7 @@
         <div class="userhand">
           <h1>YOU PICKED</h1>
           <div class="handImageContainer">
-            <img id="userPickImage" src="/assets/papier.png" />
+            <img id="userPickImage" src="/assets/papier.png" alt="usPapier"/>
           </div>
         </div>
         <div class="resultat">
@@ -67,13 +67,13 @@
         <div class="computerhand">
           <h1>SHELDON PICKED</h1>
           <div class="handImageContainer">
-            <img id="computerPickImage" src="/assets/papier.png" />
+            <img id="computerPickImage" src="/assets/papier.png" alt="cpPapier"/>
           </div>
         </div>
       </div>
       <br />
       <div class="abstand"></div>
-      <div class="rules">
+      <div class="rules" role="button">
         <button
           onclick="document.getElementById('id01').style.display='block'"
           class="ws-btn w3-dark-grey"
@@ -93,18 +93,18 @@
               <center><h2>That's the Rules</h2></center>
               <br />
             </header>
-            <div class="w3-container">
+            <div class="w3-container" role="modal">
               <br />
               <center>
-                <img src="/assets/title.png" />
+                <img src="/assets/title.png" alt="Titel"/>
                 <p>Schäri , Stei, Papier.....> let's Play</p>
                 <p>
                   You play with Sheldon Cooper🎉, aight i warned you LOL 🤪🤦🏾‍♂️
                 </p>
               </center>
             </div>
-            <div class="w3-container">
-              <center><img src="/assets/rules.png" /></center>
+            <div class="w3-container" role="container">
+              <center><img src="/assets/rules.png" alt="Rules"/></center>
               <br />
               <br />
               <center><h3>Click anywhere to close the Window</center>
@@ -112,7 +112,7 @@
           </div>
         </div>
       </div>
-      <div class="attribution" div>
+      <div class="attribution" role="footer" div>
         <div class="footer">
           Challenge by
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
