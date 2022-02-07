@@ -1,139 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
 
-    <title>Schere / Stein & Papier</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-  <body>
-        <div role="navigation"></div>
-        <div role="main"></div>
-        <div role="contentinfo"></div>
-    <div class="playboard">
-      <div class="scoreboard">
-        <div class="title">
-          <img src="/assets/title.png" alt="Titel"/>
-        </div>
-        <div class="score">
-          <p>SCORE</p>
-          <h1>0</h1>
+  <title>Schere / Stein & Papier</title>
+</head>
+
+<body>
+  <div role="navigation"></div>
+  <div role="main"></div>
+  <div role="contentinfo"></div>
+  <div class="playboard">
+    <div class="scoreboard">
+      <div class="title">
+        <img src="/assets/title.png" alt="Titel" />
+      </div>
+      <div class="score">
+        <p>SCORE</p>
+        <h1>0</h1>
+      </div>
+    </div>
+    <div class="hands">
+      <div class="hand papier">
+        <img src="/assets/papier.png" alt="Papier"
+          onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')" />
+      </div>
+      <div class="hand schere">
+        <img src="/assets/schere.png" alt="Schere"
+          onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')" />
+      </div>
+      <div class="hand stein">
+        <img src="/assets/stein.png" alt="Stein" onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')" />
+      </div>
+    </div>
+    <div class="contest">
+      <div class="userhand">
+        <h1>YOU PICKED</h1>
+        <div class="handImageContainer">
+          <img id="userPickImage" src="/assets/papier.png" alt="usPapier" />
         </div>
       </div>
-      <div class="hands" >
-        <div class="hand papier">
-          <img
-            src="/assets/papier.png" alt="Papier"
-            onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')"
-          />
+      <div class="resultat">
+        <div class="decision">
+          <h1>YOU WIN!</h1>
         </div>
-        <div class="hand schere">
-          <img
-            src="/assets/schere.png" alt="Schere"
-            onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')"
-          />
-        </div>
-        <div class="hand stein">
-          <img
-            src="/assets/stein.png" alt="Stein"
-            onclick="pickUserHand('papier'), playAudio('/audio/mausClick.mp3')"
-          />
-        </div>
+        <div class="newGame" onclick="restartGame()">PLAY AGAIN</div>
       </div>
-      <div class="contest">
-        <div class="userhand">
-          <h1>YOU PICKED</h1>
-          <div class="handImageContainer">
-            <img id="userPickImage" src="/assets/papier.png" alt="usPapier"/>
-          </div>
-        </div>
-        <div class="resultat">
-          <div class="decision">
-            <h1>YOU WIN!</h1>
-          </div>
-          <div class="newGame" onclick="restartGame()">PLAY AGAIN</div>
-        </div>
-        <div class="computerhand">
-          <h1>SHELDON PICKED</h1>
-          <div class="handImageContainer">
-            <img id="computerPickImage" src="/assets/papier.png" alt="cpPapier"/>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div class="abstand"></div>
-      <div class="rules">
-        <button
-          onclick="document.getElementById('id01').style.display='block'"
-          class="ws-btn w3-dark-grey"
-          data-toggle="modal"
-          style="font-size: 17px; padding: 12px 35px"
-        >
-          Open Rules
-        </button>
-        <div id="id01" class="w3-modal" style="display: block">
-          <div class="w3-modal-content w3-animate-top w3-card-4">
-            <header class="w3-container w3-red w3-display-container">
-              <span
-                onclick="document.getElementById('id01').style.display='none'"
-                class="w3-button w3-xlarge w3-display-topright w3-hover-red w3-hover-opacity"
-                >X</span
-              >
-              <h2>That's the Rules</h2>
-              <br />
-            </header>
-            <div className="img">
-              <br />
-              <center>
-                <img src="/assets/title.png" alt="Titel"/>
-                <p>Schäri , Stei, Papier.....> let's Play</p>
-                <p>
-                  You play with Sheldon Cooper🎉, aight i warned you LOL 🤪🤦🏾‍♂️
-                </p>
-              </center>
-            </div>
-            <div class="w3-container">
-              <center><img src="/assets/rules.png" alt="Rules"/></center>
-              <br />
-              <br />
-              <center><h3>Click anywhere to close the Window</center>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="attribution" div>
-        <div class="footer">
-          Challenge by
-          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-            >Frontend Mentor</a
-          >. Coded by
-          <a href="https://github.com/DeepCoreB4#">Edgar Cuppari</a> © 2022 All
-          Rights Reserved.
+      <div class="computerhand">
+        <h1>SHELDON PICKED</h1>
+        <div class="handImageContainer">
+          <img id="computerPickImage" src="/assets/papier.png" alt="cpPapier" />
         </div>
       </div>
     </div>
-    <script src="/js/schnipschnap.js"></script>
-    <script src="/js/modal.js"></script>
-    <script>
-      // Get the click audio
-      function play() {
-        var audio = document.getElementById("audio");
-        audio.play();
-      }
-    </script>
-  </body>
+    <br />
+    <div class="abstand"></div>
+    <div class="rules">
+      <button onclick="document.getElementById('id01').style.display='block'" class="ws-btn w3-dark-grey"
+        data-toggle="modal" style="font-size: 17px; padding: 12px 35px">
+        Open Rules
+      </button>
+      <div id="id01" class="w3-modal" style="display: block">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+          <header class="w3-container w3-red w3-display-container">
+            <span onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-xlarge w3-display-topright w3-hover-red w3-hover-opacity">X</span>
+            <h2>That's the Rules</h2>
+            <br />
+          </header>
+          <br />
+          <img src="/assets/title.png" alt="Titel" class="center" />
+          <p class="p"> Schäri , Stei, Papier.....> let's Play</p>
+          <p class="p"> You play with Sheldon Cooper🎉, aight i warned you LOL 🤪🤦🏾‍♂️</p>
+          <div class="w3-container">
+            <img src="/assets/rules.png" alt="Rules" class="center" />
+            <br />
+            <br />
+              <h3>Click anywhere to close the Window
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution" div>
+      <div class="footer">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+        <a href="https://github.com/DeepCoreB4#">Edgar Cuppari</a> © 2022 All
+        Rights Reserved.
+      </div>
+    </div>
+  </div>
+  <script src="/js/schnipschnap.js"></script>
+  <script src="/js/modal.js"></script>
+  <script>
+    // Get the click audio
+    function play() {
+      var audio = document.getElementById("audio");
+      audio.play();
+    }
+  </script>
+</body>
+
 </html>
