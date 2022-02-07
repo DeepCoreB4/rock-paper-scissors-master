@@ -115,6 +115,12 @@ body {
   user-select: none;
   color: #ffffff;
 }
+.w3-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .w3-dark-grey,
 .w3-hover-dark-grey:hover,
 .w3-dark-gray,
@@ -130,6 +136,9 @@ body {
 }
 h2 {
   font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 h3 {
   font-size: 25px;
@@ -173,8 +182,9 @@ p {
   Hands Table
 ----------------------------------------------------------------*/
 .hands {
-  background-image: url("../assets/triangle.png");
   background-position: center;
+  background-image: url("../assets/triangle.png");
+
   background-repeat: no-repeat;
   visibility: visible;
   opacity: 1;
